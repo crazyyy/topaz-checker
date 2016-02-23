@@ -14,46 +14,66 @@
 
 <?php
 
-if($_FILES){
+    if($_FILES){
 
- //Checking if file is selected or not
-
- if($_FILES['file']['name'] != "") {
-
+    //Checking if file is selected or not
+    if($_FILES['file']['name'] != "") {
 
         //Checking if the file is plain text or not
+        if(isset($_FILES) && $_FILES['file']['type'] != 'text/plain') {
+            echo "<span>File could not be accepted ! Please upload any '*.txt' file.</span>";
+            exit();
+        }
 
- if(isset($_FILES) && $_FILES['file']['type'] != 'text/plain') {
+        echo "<center><span id='Content'>Contents of ".$_FILES['file']['name']." File</span></center>";
 
- echo "<span>File could not be accepted ! Please upload any '*.txt' file.</span>";
+        //Getting and storing the temporary file name of the uploaded file
+        $fileName = $_FILES['file']['tmp_name'];
 
- exit();
-  }
-  echo "<center><span id='Content'>Contents of ".$_FILES['file']['name']." File</span></center>";
+        //Throw an error message if the file could not be open
+        $file = fopen($fileName,"r") or exit("Unable to open file!");
 
- //Getting and storing the temporary file name of the uploaded file
- $fileName = $_FILES['file']['tmp_name'];
+        // Reading a .txt file line by line
+        echo 'line by line : <br>';
+        $i = 0;
+        $userline = "";
+        while (!feof($file)) {
+            $line = fgets($file);
+            echo $i . ": " . $line . "";
+            if ($i==1) {
+                $userline = $line;
+            }
+            echo '<br>';
+            $i++;
+        }
 
- //Throw an error message if the file could not be open
- $file = fopen($fileName,"r") or exit("Unable to open file!");
+        echo '<hr>';
+        echo $userline;
+        echo '<hr>';
 
- // Reading a .txt file line by line
- while(!feof($file)) {
- echo fgets($file). "";
- }
+        preg_match_all("/(.*) \/ (.*)/", $userline, $output_array);
 
- //Reading a .txt file character by character
- while(!feof($file)) {
- echo fgetc($file);
- }
- fclose($file);
- }
+        foreach($output_array[1] as $findfirst){
+            $email = $findfirst;
+        }
 
- else {
- if(isset($_FILES) && $_FILES['file']['type'] == '')
- echo "<span>Please Choose a file by click on 'Browse' or 'Choose File' button.</span>";
- }
-}
+        foreach($output_array[2] as $findsecond){
+            $email_password = $findsecond;
+        }
+
+        echo "email: ".$email."<br>";
+        echo "password: ".$email_password;
+
+
+
+        fclose($file);
+
+    } else {
+
+        if(isset($_FILES) && $_FILES['file']['type'] == '')
+            echo "<span>Please Choose a file by click on 'Browse' or 'Choose File' button.</span>";
+        }
+    }
 ?>
 
 
