@@ -122,6 +122,22 @@ article {
 .looper {
   @extend .clearfix;
 }
+.main-block {
+  table {
+    width: 100%;
+    td,
+    td {
+      font-size: 12px;
+
+      padding: 5px;
+
+      text-align: left;
+      text-align: left;
+
+      border: 1px solid $light-gray;
+    }
+  }
+}
 
 
 footer {
