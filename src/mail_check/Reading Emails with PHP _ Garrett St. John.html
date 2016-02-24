@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://garrettstjohn.com/article/reading-emails-with-php/ -->
+<html lang="en-US" class="is-header-fixed js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-csstransformspreserve3d" data-livestyle-extension="available" style="" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+	<title>Reading Emails with PHP | Garrett St. John</title>
+	
+	<link rel="alternate" type="application/rss+xml" title="Garrett St. John » Feed" href="http://garrettstjohn.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Garrett St. John » Comments Feed" href="http://garrettstjohn.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Garrett St. John » Reading Emails with PHP Comments Feed" href="http://garrettstjohn.com/article/reading-emails-with-php/feed/">
+		<script async="" src="./Reading Emails with PHP _ Garrett St. John_files/saved_resource"></script><script async="" src="http://www.google-analytics.com/analytics.js"></script><script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/garrettstjohn.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.3"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Reading Emails with PHP _ Garrett St. John_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="stylesheet-css" href="./Reading Emails with PHP _ Garrett St. John_files/stylesheet.css" type="text/css" media="all">
+<link rel="stylesheet" id="system-message-css" href="./Reading Emails with PHP _ Garrett St. John_files/system-message.css" type="text/css" media="all">
+<link rel="stylesheet" id="noticia-text-css" href="./Reading Emails with PHP _ Garrett St. John_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./Reading Emails with PHP _ Garrett St. John_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontello-css" href="./Reading Emails with PHP _ Garrett St. John_files/fontello.css" type="text/css" media="all">
+<link rel="stylesheet" id="prettify-css" href="./Reading Emails with PHP _ Garrett St. John_files/prettify.css" type="text/css" media="all">
+<link rel="stylesheet" id="uniform-css" href="./Reading Emails with PHP _ Garrett St. John_files/uniform.default.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="./Reading Emails with PHP _ Garrett St. John_files/magnific-popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="fluidbox-css" href="./Reading Emails with PHP _ Garrett St. John_files/fluidbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="./Reading Emails with PHP _ Garrett St. John_files/mediaelementplayer.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="flexslider-css" href="./Reading Emails with PHP _ Garrett St. John_files/flexslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="selection-sharer-css" href="./Reading Emails with PHP _ Garrett St. John_files/selection-sharer.css" type="text/css" media="all">
+<link rel="stylesheet" id="elastislide-css" href="./Reading Emails with PHP _ Garrett St. John_files/elastislide.css" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="./Reading Emails with PHP _ Garrett St. John_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="768-css" href="./Reading Emails with PHP _ Garrett St. John_files/768.css" type="text/css" media="all">
+<link rel="stylesheet" id="992-css" href="./Reading Emails with PHP _ Garrett St. John_files/992.css" type="text/css" media="all">
+<link rel="stylesheet" id="1200-css" href="./Reading Emails with PHP _ Garrett St. John_files/1200.css" type="text/css" media="all">
+<link rel="stylesheet" id="1400-css" href="./Reading Emails with PHP _ Garrett St. John_files/1400.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-fix-css" href="./Reading Emails with PHP _ Garrett St. John_files/wp-fix.css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-css" href="./Reading Emails with PHP _ Garrett St. John_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.Tooltip.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.validate.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/modernizr.min.js"></script>
+<script type="text/javascript" src="http://garrettstjohn.com/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.4.9"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://garrettstjohn.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://garrettstjohn.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Advanced Regular Expressions" href="http://garrettstjohn.com/article/advanced-regular-expressions/">
+<link rel="next" title="Extracting Attachments From Emails With PHP" href="http://garrettstjohn.com/article/extracting-attachments-from-emails-with-php/">
+<meta name="generator" content="WordPress 4.3.3">
+<link rel="canonical" href="./Reading Emails with PHP _ Garrett St. John_files/Reading Emails with PHP _ Garrett St. John.html">
+<link rel="shortlink" href="http://garrettstjohn.com/?p=264">
+<meta property="og:title" content="Reading Emails with PHP">
+<meta property="og:description" content="Last week I got to do a fun little side project which we called My Slow Low. The site is a simple photo collection of slow/low carb ">
+
+
+<meta name="description" content="Quick steps to reading email with PHP">
+<meta name="keywords" content="php, email, inbox, imap, mail, read email">
+
+<!-- Body Font -->
+<link rel="stylesheet" type="text/css" href="./Reading Emails with PHP _ Garrett St. John_files/css(1)">
+<style type="text/css">body, input, textarea, select, button { font-family: "Noticia Text"; }</style>
+			
+<!-- Content Width -->
+<style type="text/css">.layout-fixed { max-width: 740px; }</style>
+			
+<!--[if lt IE 9]>
+	<script src="http://garrettstjohn.com/wp-content/themes/readme/js/ie.js"></script>
+<![endif]-->
+
+		<style type="text/css">
+.read-next {
+    display: none;
+}
+
+#disqus_thread {
+    border-width: 5px 0;
+    border-style: solid;
+    border-color: #eee;
+    padding-top: 2em;
+}
+
+.entry-header .entry-meta:first-child {
+    display: none;
+}
+
+.entry-content a.footnote {
+  text-decoration: none;
+  font-weight: bold !important;
+  border-bottom: none !important;
+  vertical-align: super;
+  font-size: 13px;
+}
+
+.entry-content a.footnote:hover {
+  color: #096;
+}
+
+#footnotes {
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+  list-style: none;
+  padding-left: 0;
+}
+
+#footnotes a {
+  color: #333;
+  font-size: 13px;
+}
+</style>
+<!-- Google Analytics Tracking by Google Analyticator 6.4.9: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-4718336-19', 'auto');
+ 
+	ga('send', 'pageview');
+</script>
+<script type="text/javascript" async="" src="./Reading Emails with PHP _ Garrett St. John_files/embed.js"></script><script async="" type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/count.js"></script><script src="./Reading Emails with PHP _ Garrett St. John_files/count-data.js"></script><link rel="stylesheet" href="./Reading Emails with PHP _ Garrett St. John_files/entypo.min.css"><link rel="stylesheet" href="./Reading Emails with PHP _ Garrett St. John_files/css(2)"><style type="text/css">.share.sharer-0{width:92px;height:20px;-webkit-touch-callout:none;-khtml-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.share.sharer-0 [class*=entypo-]:before{font-family:entypo,sans-serif}.share.sharer-0 label{font-size:16px;cursor:pointer;margin:0;padding:5px 10px;border-radius:5px;background:#a29baa;color:#333;-webkit-transition:all .3s ease;transition:all .3s ease}.share.sharer-0 label:hover{opacity:.8}.share.sharer-0 label span{text-transform:uppercase;font-size:.9em;font-family:Lato,sans-serif;font-weight:700;-webkit-font-smoothing:antialiased;padding-left:6px}.share.sharer-0 .social{opacity:0;-webkit-transition:all .4s ease;transition:all .4s ease;margin-left:-15px;visibility:hidden}.share.sharer-0 .social.top{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;margin-top:-80px}.share.sharer-0 .social.bottom{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;margin-top:5px}.share.sharer-0 .social.middle{margin-top:-34px}.share.sharer-0 .social.middle.right{-webkit-transform-origin:5% 50%;-ms-transform-origin:5% 50%;transform-origin:5% 50%;margin-left:105px}.share.sharer-0 .social.middle.left{-webkit-transform-origin:5% 50%;-ms-transform-origin:5% 50%;transform-origin:5% 50%}.share.sharer-0 .social.right{margin-left:14px}.share.sharer-0 .social.load{-webkit-transition:none!important;transition:none!important}.share.sharer-0 .social.networks-1{width:60px}.share.sharer-0 .social.networks-1.center,.share.sharer-0 .social.networks-1.left{margin-left:14px}.share.sharer-0 .social.networks-1.middle.left{margin-left:-70px}.share.sharer-0 .social.networks-1 ul{width:60px}.share.sharer-0 .social.networks-2{width:120px}.share.sharer-0 .social.networks-2.center{margin-left:-13px}.share.sharer-0 .social.networks-2.left{margin-left:-44px}.share.sharer-0 .social.networks-2.middle.left{margin-left:-130px}.share.sharer-0 .social.networks-2 ul{width:120px}.share.sharer-0 .social.networks-3{width:180px}.share.sharer-0 .social.networks-3.center{margin-left:-45px}.share.sharer-0 .social.networks-3.left{margin-left:-102px}.share.sharer-0 .social.networks-3.middle.left{margin-left:-190px}.share.sharer-0 .social.networks-3 ul{width:180px}.share.sharer-0 .social.networks-4{width:240px}.share.sharer-0 .social.networks-4.center{margin-left:-75px}.share.sharer-0 .social.networks-4.left{margin-left:162px}.share.sharer-0 .social.networks-4.middle.left{margin-left:-250px}.share.sharer-0 .social.networks-4 ul{width:240px}.share.sharer-0 .social.networks-5{width:300px}.share.sharer-0 .social.networks-5.center{margin-left:-105px}.share.sharer-0 .social.networks-5.left{margin-left:-225px}.share.sharer-0 .social.networks-5.middle.left{margin-left:-320px}.share.sharer-0 .social.networks-5 ul{width:300px}.share.sharer-0 .social.active{opacity:1;-webkit-transition:all .4s ease;transition:all .4s ease;visibility:visible}.share.sharer-0 .social.active.top{-webkit-transform:scale(1) translateY(-10px);-ms-transform:scale(1) translateY(-10px);transform:scale(1) translateY(-10px)}.share.sharer-0 .social.active.bottom{-webkit-transform:scale(1) translateY(15px);-ms-transform:scale(1) translateY(15px);transform:scale(1) translateY(15px)}.share.sharer-0 .social.active.middle.right{-webkit-transform:scale(1) translateX(10px);-ms-transform:scale(1) translateX(10px);transform:scale(1) translateX(10px)}.share.sharer-0 .social.active.middle.left{-webkit-transform:scale(1) translateX(-10px);-ms-transform:scale(1) translateX(-10px);transform:scale(1) translateX(-10px)}.share.sharer-0 .social ul{position:relative;left:0;right:0;height:46px;color:#fff;margin:auto;padding:0;list-style:none}.share.sharer-0 .social ul li{font-size:20px;cursor:pointer;width:60px;margin:0;padding:12px 0;text-align:center;float:left;display:none;height:22px;position:relative;z-index:2;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-transition:all .3s ease;transition:all .3s ease}.share.sharer-0 .social ul li:hover{color:rgba(0,0,0,.5)}.share.sharer-0 .social li[class*=facebook]{background:#3b5998;display:block}.share.sharer-0 .social li[class*=twitter]{background:#6cdfea;display:block}.share.sharer-0 .social li[class*=gplus]{background:#e34429;display:block}.share.sharer-0 .social li[class*=pinterest]{background:#c5282f;display:block}.share.sharer-0 .social li[class*=paper-plane]{background:#42c5b0;display:block}</style><meta name="sharer.share.sharer-0"><script src="./Reading Emails with PHP _ Garrett St. John_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head>
+
+<body class="single single-post postid-264 single-format-standard">
+
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+			<h1 class="site-title">
+											<a href="http://garrettstjohn.com/" rel="home">Garrett St. John</a>
+									</h1>
+			
+			
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<a class="menu-toggle toggle-link"></a>
+				
+				<div class="nav-menu">
+					<ul id="nav" class="menu-custom vs-nav"><li id="menu-item-990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="http://garrettstjohn.com/">Home</a></li>
+<li id="menu-item-989" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-989"><a href="http://garrettstjohn.com/articles/">Articles</a></li>
+<li id="menu-item-974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-974"><a href="http://garrettstjohn.com/contact/">Contact</a></li>
+</ul>				</div>
+			</nav>
+			
+			
+						
+			
+			<div class="social-container">
+				<a class="social-toggle toggle-link"></a>
+				
+				<span style="display: none;">Social Icons</span>			<div class="textwidget"><ul class="social">
+
+<li><a target="_blank" class="linkedin" href="https://www.linkedin.com/in/garrettstjohn"></a></li>
+
+<li><a target="_blank" class="github" href="https://github.com/gstjohn"></a></li>
+
+<li><a target="_blank" class="twitter" href="https://twitter.com/gstjohn"></a></li>
+
+<li><a target="_blank" class="rss" href="http://feeds.feedburner.com/garrettstjohn"></a></li>
+
+</ul></div>
+					</div>
+        </header>
+
+<div id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+			<div class="layout-fixed">
+												<article id="post-264" class="post-264 post type-post status-publish format-standard hentry category-php tag-email tag-imap tag-php">
+									<header class="entry-header">
+										<div class="entry-meta">
+											<span class="cat-links">
+												<a href="http://garrettstjohn.com/types/development/php/" rel="category tag">PHP</a>											</span>
+										</div>
+										
+										
+																				<h1 class="entry-title">Reading Emails with PHP</h1>
+										
+										
+										<div class="entry-meta">
+											<span class="entry-date">
+												<i class="pw-icon-clock"></i>
+												
+												<a href="./Reading Emails with PHP _ Garrett St. John_files/Reading Emails with PHP _ Garrett St. John.html" rel="bookmark">
+													<time class="entry-date" datetime="2012-02-13T04:34:10+00:00">February 7, 2011</time>
+												</a>
+											</span>
+											
+											<span class="comment-link">
+												<i class="pw-icon-comment"></i>
+												
+												<a href="http://garrettstjohn.com/article/reading-emails-with-php/#disqus_thread" data-disqus-identifier="264 http://garrettstjohn.com/?p=264">7 Comments</a>											</span>
+											
+											<span class="byline">
+												<span class="author vcard">
+													<i class="pw-icon-user-outline"></i>
+													
+													<a class="url fn n" href="http://garrettstjohn.com/article/author/garrett/" rel="author">Garrett</a>
+												</span>
+											</span>
+											
+											<span class="read-time"><i class="pw-icon-bookmark-empty-1"></i><span class="eta">2 min</span> read</span>
+										</div>
+										
+										<div class="share sharer-0" style="display: block;"><label class="entypo-export"><span>Share</span></label><div class="social load bottom left networks-5"><ul><li class="entypo-pinterest" data-network="pinterest"></li><li class="entypo-twitter" data-network="twitter"></li><li class="entypo-facebook" data-network="facebook"></li><li class="entypo-gplus" data-network="google_plus"></li><li class="entypo-paper-plane" data-network="email"></li></ul></div></div>
+									</header>
+									
+									
+									<div class="entry-content">
+										<p class="selectionShareable">Last week I got to do a fun little side project which we called My Slow Low. The site is a simple photo collection of slow/low carb meals for those that are out of ideas on what to eat, but want to stick to their diet. While conceptualizing how we would build the site, the idea of emailing in photos came up. We didn’t want the hassle of account management and were trying to go for a more “mobile capable” option. This was my first time coding for IMAP with PHP and I figured some others could use a jump start from what I’ve learned.</p>
+<p class="selectionShareable">PHP already has a nice <a href="http://php.net/manual/en/book.imap.php">IMAP extension</a> which needs to be installed and enabled before going further. The core functionality is all there, but the specifics on how to use it aren’t necessarily all that clear.</p>
+<p class="selectionShareable">Here’s a PHP class I put together to do some basic operations on an IMAP Inbox. It’s a bit tailored to this project, but could be easily revised to fit other needs or extended to be more full featured.</p>
+<pre id="email_reader_class" class=" language-php"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Email_reader</span> <span class="token punctuation">{</span>
+
+	<span class="token comment" spellcheck="true">// imap server connection</span>
+	<span class="token keyword">public</span> <span class="token variable">$conn</span><span class="token punctuation">;</span>
+
+	<span class="token comment" spellcheck="true">// inbox storage and inbox message count</span>
+	<span class="token keyword">private</span> <span class="token variable">$inbox</span><span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token variable">$msg_cnt</span><span class="token punctuation">;</span>
+
+	<span class="token comment" spellcheck="true">// email login credentials</span>
+	<span class="token keyword">private</span> <span class="token variable">$server</span> <span class="token operator">=</span> <span class="token string">'yourserver.com'</span><span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token variable">$user</span>   <span class="token operator">=</span> <span class="token string">'email@yourserver.com'</span><span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token variable">$pass</span>   <span class="token operator">=</span> <span class="token string">'yourpassword'</span><span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token variable">$port</span>   <span class="token operator">=</span> <span class="token number">143</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// adjust according to server settings</span>
+
+	<span class="token comment" spellcheck="true">// connect to the server and get the inbox emails</span>
+	<span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">inbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment" spellcheck="true">// close the server connection</span>
+	<span class="token keyword">function</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">msg_cnt</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+		<span class="token function">imap_close</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment" spellcheck="true">// open the server connection</span>
+	<span class="token comment" spellcheck="true">// the imap_open function parameters will need to be changed for the particular server</span>
+	<span class="token comment" spellcheck="true">// these are laid out to connect to a Dreamhost IMAP server</span>
+	<span class="token keyword">function</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span> <span class="token operator">=</span> <span class="token function">imap_open</span><span class="token punctuation">(</span><span class="token string">'{'</span><span class="token punctuation">.</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">server</span><span class="token punctuation">.</span><span class="token string">'/notls}'</span><span class="token punctuation">,</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">user</span><span class="token punctuation">,</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">pass</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment" spellcheck="true">// move the message to a new folder</span>
+	<span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token variable">$msg_index</span><span class="token punctuation">,</span> <span class="token variable">$folder</span><span class="token operator">=</span><span class="token string">'INBOX.Processed'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment" spellcheck="true">// move on server</span>
+		<span class="token function">imap_mail_move</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">,</span> <span class="token variable">$msg_index</span><span class="token punctuation">,</span> <span class="token variable">$folder</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">imap_expunge</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment" spellcheck="true">// re-read the inbox</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">inbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment" spellcheck="true">// get a specific message (1 = first email, 2 = second email, etc.)</span>
+	<span class="token keyword">function</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token variable">$msg_index</span><span class="token operator">=</span><span class="token keyword">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">elseif</span> <span class="token punctuation">(</span> <span class="token operator">!</span> <span class="token function">is_null</span><span class="token punctuation">(</span><span class="token variable">$msg_index</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isset</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span><span class="token punctuation">[</span><span class="token variable">$msg_index</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span><span class="token punctuation">[</span><span class="token variable">$msg_index</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment" spellcheck="true">// read the inbox</span>
+	<span class="token keyword">function</span> <span class="token function">inbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">msg_cnt</span> <span class="token operator">=</span> <span class="token function">imap_num_msg</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token variable">$in</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token variable">$i</span> <span class="token markup">&lt;= $this-&gt;</span>msg_cnt<span class="token punctuation">;</span> <span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token variable">$in</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+				<span class="token string">'index'</span>     <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$i</span><span class="token punctuation">,</span>
+				<span class="token string">'header'</span>    <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">imap_headerinfo</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">,</span> <span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				<span class="token string">'body'</span>      <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">imap_body</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">,</span> <span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				<span class="token string">'structure'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">imap_fetchstructure</span><span class="token punctuation">(</span><span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">conn</span><span class="token punctuation">,</span> <span class="token variable">$i</span><span class="token punctuation">)</span>
+			<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">inbox</span> <span class="token operator">=</span> <span class="token variable">$in</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token delimiter">?&gt;</span></span></code></pre>
+<p class="selectionShareable">A fair amount of this is self-explanatory or commented inline, but I will go over the inbox() method because it is the core functionality. The IMAP inbox is much like an array with a numbered key starting at 1. In the inbox() method, I store that index so that the email can be moved, deleted, or read again later.</p>
+<p class="selectionShareable">Next, the header is stored with the function imap_headerinfo(). This pulls down an object from the server containing information like the Subject, From: address, To: address, and text encoding type.</p>
+<p class="selectionShareable">Using imap_body(), the body text of the email is retrieved. What’s returned isn’t overly clean as it’s just the raw body with boundaries included (see: <a href="http://en.wikipedia.org/wiki/MIME#Multipart_messages">multipart messages</a>). If the received email is in HTML, there will be a plain text and HTML version included. It’s certainly possible to parse through this data like any email client does, but it’s definitely a little bit messy.</p>
+<p class="selectionShareable">Lastly, ‘structure’ is retrieved with the imap_fetchstructure() function. This is very important if you are trying to access attachments as I was with My Slow Low. In my next post, I’ll go further into the details of saving an attachment from an email and share some more about how I implemented the email processor for My Slow Low.</p>
+<p class="selectionShareable"><strong>Update:</strong> I’ve posted the follow-up to this article on <a href="http://garrettstjohn.com/entry/extracting-attachments-from-emails-with-php/">extracting email attachments with PHP</a>.</p>
+										
+																				
+																			</div>
+									
+									
+																					<footer class="entry-meta post-tags">
+													<h3>TAGS</h3>
+													
+													<a href="http://garrettstjohn.com/topics/email/" rel="tag">Email</a> <a href="http://garrettstjohn.com/topics/imap/" rel="tag">IMAP</a> <a href="http://garrettstjohn.com/topics/php/" rel="tag">PHP</a>												</footer>
+																			</article>
+										</div>
+			
+			
+						<aside class="read-next">
+				<div class="post-thumbnail no-featured-image">
+					<header class="entry-header">
+						<div class="layout-fixed">
+							<h3>NEXT READING</h3>
+							
+							<div class="entry-meta">
+								<span class="cat-links">
+									<a href="http://garrettstjohn.com/types/general/" rel="category tag">General</a>								</span>
+							</div>
+							
+							
+							<h1 class="entry-title">
+								<a href="http://garrettstjohn.com/article/advanced-regular-expressions/">Advanced Regular Expressions</a>
+							</h1>
+							
+							
+							<div class="entry-meta">
+								<span class="entry-date">
+									<i class="pw-icon-clock"></i>
+									
+									<a href="http://garrettstjohn.com/article/advanced-regular-expressions/" rel="bookmark">
+										<time class="entry-date" datetime="2012-02-13T04:34:10+00:00">February 1, 2011</time>
+									</a>
+								</span>
+								
+								
+								<span class="comment-link">
+									<i class="pw-icon-comment"></i>
+									
+																		<a href="http://garrettstjohn.com/article/advanced-regular-expressions/">0 Comment</a>
+								</span>
+								
+								
+								<span class="byline">
+									<span class="author vcard">
+										<i class="pw-icon-user-outline"></i>
+										
+										<a class="url fn n" href="http://garrettstjohn.com/article/author/garrett/" rel="author">Garrett</a>
+									</span>
+								</span>
+								
+								<span class="read-time"><i class="pw-icon-bookmark-empty-1"></i><span class="eta">1 min</span> read</span>
+							</div>
+						</div>
+					</header>
+				</div>
+			</aside>
+					
+			
+			<div class="layout-fixed">
+				<nav class="nav-single row">
+					<div class="nav-previous col-sm-6">
+						<h4>PREVIOUS POST</h4><a href="http://garrettstjohn.com/article/advanced-regular-expressions/" rel="prev"><span class="meta-nav">←</span> Advanced Regular Expressions</a>					</div>
+					
+					<div class="nav-next col-sm-6">
+						<h4>NEXT POST</h4><a href="http://garrettstjohn.com/article/extracting-attachments-from-emails-with-php/" rel="next">Extracting Attachments From Emails With PHP <span class="meta-nav">→</span></a>					</div>
+				</nav>
+				
+				
+				
+<div id="disqus_thread"><iframe id="dsq-app2" name="dsq-app2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Reading Emails with PHP _ Garrett St. John_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1725px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://garrettstjohn.com/article/reading-emails-with-php/';
+var disqus_identifier = '264 http://garrettstjohn.com/?p=264';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'garrettstjohn';
+var disqus_title = "Reading Emails with PHP";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=264';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+        <footer id="colophon" class="site-footer" role="contentinfo">
+						
+			<div class="site-info">
+				<p>
+					© 2009-2015 Garrett St. John				</p>
+			</div>
+		</footer>
+	</div>
+    
+	
+	        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'garrettstjohn';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4718336-19', 'auto');
+  ga('send', 'pageview');
+
+</script><link rel="stylesheet" id="prism-css" href="./Reading Emails with PHP _ Garrett St. John_files/prism.css" type="text/css" media="all">
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/fastclick.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.fitvids.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/prettify.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.validate.min(1).js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.fluidbox.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/mediaelement-and-player.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/readingTime.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/share.min.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/selection-sharer.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/r-gallery.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/socialstream.jquery.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/main.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/wp-fix.js"></script>
+<script type="text/javascript" src="./Reading Emails with PHP _ Garrett St. John_files/prism.js"></script>
+
+	<script src="./Reading Emails with PHP _ Garrett St. John_files/lang-php.js"></script>
+
+<div class="selectionSharer" id="selectionSharerPopover" style="position:absolute;">  <div id="selectionSharerPopover-inner">    <ul>      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="#FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"></path></svg></a></li>    </ul>  </div>  <div class="selectionSharerPopover-clip"><span class="selectionSharerPopover-arrow"></span></div></div><div id="selectionSharerPopunder" class="selectionSharer">  <div id="selectionSharerPopunder-inner">    <label>Share this selection</label>    <ul>      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="#FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"></path></svg></a></li>    </ul>  </div></div><style>#content > #center > .dose > .dosesingle,
+#content > #right > .dose > .dosesingle,
+[href^="http://www.linkbucks.com/referral/"]
+{display:none !important;}</style></body></html>
