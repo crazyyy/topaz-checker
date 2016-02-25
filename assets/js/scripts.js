@@ -17,3 +17,25 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+
+// AJAX query to check mail
+function checkMail(ID) {
+  var dataSend = {checkmailid: ID};
+  $.ajax({
+    type: "GET",
+    url: 'mail-check.php',
+    data: dataSend,
+    success: function(data){
+      $('.result-checker').fadeIn('fast');
+      $('.result-checker').html(data);
+    }
+  });
+}
+
+
+$(document).ready(function($) {
+  $('.checkmail').on('click', function(){
+    var thisID = $(this).attr('data-id');
+    checkMail(thisID);
+  })
+});
