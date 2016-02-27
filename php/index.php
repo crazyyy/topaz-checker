@@ -174,18 +174,14 @@
     $retval=mysql_query( $sql, $conn );
 
     if(! $retval ) {
-       die('Could not enter data: ' . mysql_error());
+      die('Could not enter data: ' . mysql_error());
     }
 
     echo "Entered data successfully\n";
 
     mysql_close($conn);
 
-
-
-
-
-        fclose($file);
+    fclose($file);
 
     } else {
 

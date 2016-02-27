@@ -28,6 +28,12 @@
 <div class="wrapper">
   <header role="banner">
     <div class="inner">
+      <nav>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/add.php">Добавить папку</a></li>
+        </ul>
+      </nav>
     </div><!-- /.inner -->
   </header><!-- /header -->
 

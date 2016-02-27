@@ -89,7 +89,7 @@
 
           <?php } ?>
 
-          <?php if( empty($folders_new) ) { ?>
+          <?php if( empty($folders_old) ) { ?>
             <h1 class="title title-orange">В базе нет ничего</h1>
           <?php } else { ?>
 
@@ -124,7 +124,7 @@
 
 
                 <?php
-                  $sql    = 'SELECT ID, date_add, directory_name, directory_txt,directory_pdf, directory_pdf2, directory_status FROM uploads';
+                  $sql = 'SELECT ID, date_add, directory_name, directory_txt,directory_pdf, directory_pdf2, directory_status FROM uploads';
                   $result = mysql_query($sql, $link);
 
                   while ($row = mysql_fetch_assoc($result)) { ?>
@@ -149,16 +149,25 @@
                       <?php echo $row['directory_pdf2']; ?>
                     </td>
                     <td>
+                      <?php
+                        if(strlen(trim($foldername)) == 0){
+                          $checked = 'checked';
+                        } else {
+                          $checked = '';
+                        }
+                      ?>
                       <span class="hidden"><?php echo $row['directory_status']; ?></span>
-                      <input type="checkbox" value="<?php echo $row['directory_name']; ?>">
+                      <input type="checkbox" <?php echo $checked; ?> value="<?php echo $row['directory_name']; ?>">
 
                     </td>
                   </tr>
                 <? } ?>
 
               </table>
+              <button>Проверить выбранные</button>
             </form>
           <?php } ?>
+
       </article>
 
 <?php include 'template/footer.php';?>

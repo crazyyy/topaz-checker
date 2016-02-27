@@ -143,7 +143,10 @@ article {
     color: $orange;
   }
   .title-green {
-    color: green;
+    color: $green;
+  }
+  .title-red {
+    color: $red;
   }
 }
 .looper {
