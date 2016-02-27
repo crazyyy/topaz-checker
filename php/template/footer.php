@@ -1,7 +1,4 @@
-      </article>
 
-      <aside class="sidebar" role="complementary">
-      </aside><!-- /sidebar -->
 
     </div><!-- /.inner -->
   </section><!-- /section -->

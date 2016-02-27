@@ -11,7 +11,6 @@
 @import 'sprite';
 @import 'fonts/font_fontawesome';
 @import 'fonts/font_opensans';
-@import 'fonts/font_roboto';
 
 body {
   font-family: $base-font-family;
@@ -88,7 +87,16 @@ picture {
 
   @extend .clearfix;
 }
+.hidden {
+  display: none;
+}
+button {
+  margin-bottom: 20px;
 
+  text-transform: uppercase;
+
+  color: #fff;
+}
 header {
   background-color: $light-gray;
   .logo {
@@ -116,8 +124,27 @@ nav {
 section {
   padding: 0 0 $footer;
 }
+
 article {
+  margin: 0 0 20px;
+  padding: 10px;
+
+  background-color: #fff;
+
   @extend .clearfix;
+  .title {
+    font-size: 140%;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+  }
+  .title-orange {
+    color: $orange;
+  }
+  .title-green {
+    color: green;
+  }
 }
 .looper {
   @extend .clearfix;
@@ -125,24 +152,74 @@ article {
 .main-block {
   table {
     width: 100%;
-    td,
+    margin-bottom: 20px;
+    th,
     td {
-      font-size: 12px;
+      padding: 7px;
 
-      padding: 5px;
-
-      text-align: left;
       text-align: left;
 
       border: 1px solid $light-gray;
     }
+    th {
+      font-size: 120%;
+      font-weight: bold;
+
+      text-align: center;
+
+      background-color: $light-gray;
+    }
+    tr {
+      &:nth-child(even) {
+        background-color: lighten($light-gray, 10%);
+      }
+      &:hover {
+        cursor: pointer;
+
+        background-color: lighten($green, 25%);
+      }
+    }
+  }
+}
+.refresh-new-folder {
+  input[type='text'] {
+    display: none;
+  }
+}
+.refresh-old-folders {
+  table {
+    table-layout: auto;
+    tr {
+      th,
+      td {
+        &:first-child {
+          width: 70px;
+
+          text-align: center;
+        }
+        &:nth-child(2) {
+          width: 100px;
+
+          text-align: center;
+        }
+        &:last-child{
+          width: 80px;
+          text-align: center;
+        }
+      }
+      td {
+        font-size: 80%;
+      }
+    }
   }
 }
 .result-checker {
-  border-radius: 10px;
+  display: none;
+
   margin: 25px 0;
   padding: 25px;
-  display: none;
+
+  border-radius: 10px;
 }
 
 footer {

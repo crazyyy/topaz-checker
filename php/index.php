@@ -1,7 +1,6 @@
-<?php include 'includes/config.php';?>
 <?php include 'template/header.php';?>
 
-
+      <article class="main-block">
         <table>
           <tr>
             <th>
@@ -196,6 +195,6 @@
     }
 ?>
 
-
+      </article>
 
 <?php include 'template/footer.php';?>

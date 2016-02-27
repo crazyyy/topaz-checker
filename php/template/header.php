@@ -1,3 +1,4 @@
+<?php include 'includes/config.php';?>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -33,4 +34,4 @@
   <section role="main">
     <div class="inner">
 
-      <article class="main-block">
+
