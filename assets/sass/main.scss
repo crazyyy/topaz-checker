@@ -109,11 +109,17 @@ header {
   }
 }
 nav {
+  padding: 5px 0;
   ul {
     @extend .justify-child;
     @extend .clearfix;
     li {
       display: inline-block;
+      padding: 15px;
+      margin: 0 15px 0 0;
+      text-transform: uppercase;
+      border-radius: $base-border-radius;
+      border: 1px solid $green;
     }
   }
   .headnav {
@@ -216,6 +222,22 @@ article {
     }
   }
 }
+.main-form {
+  font-size: 60%;
+  table {
+    table-layout: auto;
+    td,th {
+      &:nth-child(1),
+      &:nth-child(8),
+      &:nth-child(9) {
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
 .result-checker {
   display: none;
 

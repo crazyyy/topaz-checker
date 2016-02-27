@@ -150,7 +150,7 @@
                     </td>
                     <td>
                       <?php
-                        if(strlen(trim($foldername)) == 0){
+                        if(strlen(trim($row['directory_txt'])) == 0){
                           $checked = 'checked';
                         } else {
                           $checked = '';

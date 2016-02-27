@@ -31,7 +31,7 @@
       <nav>
         <ul>
           <li><a href="/">Главная</a></li>
-          <li><a href="/add.php">Добавить папку</a></li>
+          <li><a href="/add.php">Добавить папки</a></li>
         </ul>
       </nav>
     </div><!-- /.inner -->

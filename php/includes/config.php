@@ -15,13 +15,4 @@
     exit;
   }
 
-  $sql    = 'SELECT ID, login, password FROM accounts';
-  $result = mysql_query($sql, $link);
-
-  if (!$result) {
-    echo "Ошибка DB, запрос не удался\n";
-    echo 'MySQL Error: ' . mysql_error();
-    exit;
-  }
-
 ?>

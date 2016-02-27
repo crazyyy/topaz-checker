@@ -58,13 +58,20 @@
       $sql = "UPDATE uploads SET directory_txt = '".$directory_txt."', directory_pdf = '".$directory_pdf."', directory_pdf2 = '".$directory_pdf2."' WHERE directory_name = '".$foldername."';";
 
       $addfolder = mysql_query( $sql, $link );
-
       if (!$addfolder) {
         echo "Ошибка DB, запрос не удался\n";
         echo 'MySQL Error: ' . mysql_error();
         exit;
       }
 
+      $sqltoaccounts = "INSERT INTO accounts (folder_name, txt_name, date_add) VALUES ('".$foldername."', '".$directory_txt."', NOW())";
+
+      $addaccounts = mysql_query( $sqltoaccounts, $link );
+      if (!$addaccounts) {
+        echo "Ошибка DB, запрос не удался\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
+      }
     }
   }
 
