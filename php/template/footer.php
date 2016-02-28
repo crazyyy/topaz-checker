@@ -101,6 +101,57 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
+  $('.fill-the-form').on('click', function(event){
+    event.preventDefault();
+
+    // get the form data
+    var needCheckFiles = [];
+    $('.main-form input[name="fiilformed"]:checked').each(function(index, el) {
+      var fileLocations = $(this).val();
+      console.log(fileLocations);
+      needCheckFiles.push(fileLocations);
+    });
+
+    console.log(needCheckFiles);
+
+    var jsonString = JSON.stringify(needCheckFiles)
+    var SenderNeedCheckFiles = {};
+    SenderNeedCheckFiles.data = jsonString;
+
+    // process the form
+    $.ajax({
+      type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url         : 'add-content-from-file.php', // the url where we want to POST
+      data: SenderNeedCheckFiles,
+      cache: false,
+      success: function(data){
+        console.log('ajax ok');
+      },
+      error: function (error) {
+        console.log('ajax false: ' + error);
+      }
+    })
+
+    .done(function( data ) {
+      console.log(data);
+      // alert('Братишка, обнови страничку!');
+      // location.reload();
+    });
+
+
+
+
+
+
+
+
+  })
+
+
+
+
+
+
 });
 
 </script>

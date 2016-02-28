@@ -156,7 +156,6 @@
                           $checked = '';
                         }
                       ?>
-                      <span class="hidden"><?php echo $row['directory_status']; ?></span>
                       <input type="checkbox" <?php echo $checked; ?> value="<?php echo $row['directory_name']; ?>">
 
                     </td>

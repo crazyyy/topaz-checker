@@ -9,8 +9,8 @@
 
   $foldernames = explode(",", $data);
 
-      // array for object files
-      $readyfiles = array();
+  // array for object files
+  $readyfiles = array();
 
 
   foreach($foldernames as $foldername){
@@ -32,6 +32,9 @@
       }
 
       $i = 0;
+      $directory_txt = '';
+      $directory_pdf = '';
+      $directory_pdf2 = '';
       // create object with filenames
       $object = new stdClass();
       $object->foldername = $foldername;
@@ -64,6 +67,7 @@
         exit;
       }
 
+      // need add check - maybe folder in accounts exist
       $sqltoaccounts = "INSERT INTO accounts (folder_name, txt_name, date_add) VALUES ('".$foldername."', '".$directory_txt."', NOW())";
 
       $addaccounts = mysql_query( $sqltoaccounts, $link );
