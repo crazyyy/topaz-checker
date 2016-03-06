@@ -115,11 +115,14 @@ nav {
     @extend .clearfix;
     li {
       display: inline-block;
-      padding: 15px;
+
       margin: 0 15px 0 0;
+      padding: 15px;
+
       text-transform: uppercase;
-      border-radius: $base-border-radius;
+
       border: 1px solid $green;
+      border-radius: $base-border-radius;
     }
   }
   .headnav {
@@ -211,8 +214,9 @@ article {
 
           text-align: center;
         }
-        &:last-child{
+        &:last-child {
           width: 80px;
+
           text-align: center;
         }
       }
@@ -226,12 +230,45 @@ article {
   font-size: 60%;
   table {
     table-layout: auto;
-    td,th {
+    td,
+    th {
       &:nth-child(1),
       &:nth-child(8),
-      &:nth-child(9) {
+      &:nth-child(9),
+      &:nth-child(10) {
         width: 30px;
+
         text-align: center;
+      }
+    }
+    .status {
+      font-size: 220%;
+      font-weight: bold;
+
+      padding: 0;
+    }
+    .status-none {
+      color: #fff;
+      background-color: $dark-gray;
+    }
+    .status-checked {
+      color: #000;
+      background-color: yellow;
+    }
+    .status-found {
+      color: #fff;
+      background-color: $green;
+    }
+    .status-reject {
+      background-color: $orange;
+    }
+    .status-error {
+      color: #fff;
+      background-color: $red;
+    }
+    .checking-this-mail {
+      td {
+        background-color: lighten($orange, 15%);
       }
     }
   }

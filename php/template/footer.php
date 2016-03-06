@@ -1,16 +1,9 @@
-
-
     </div><!-- /.inner -->
   </section><!-- /section -->
 </div><!-- /wrapper -->
 
 <footer role="contentinfo">
   <div class="inner">
-
-    <p class="copyright">
-
-    </p><!-- /copyright -->
-
   </div><!-- /.inner -->
 </footer><!-- /footer -->
 
@@ -135,22 +128,64 @@ $(document).ready(function() {
     .done(function( data ) {
       console.log(data);
       // alert('Братишка, обнови страничку!');
-      // location.reload();
+      location.reload();
     });
-
-
-
-
-
-
-
-
   })
 
 
 
 
 
+
+
+
+
+
+  $('.check-the-from').on('click', function(event){
+    event.preventDefault();
+
+
+    $('.main-form input[name="check-this"]:checked').each(function(index, el) {
+
+      // get the form data
+      var needCheckMails = {foldername : '', login : '', password : ''};
+
+      $(this).closest('tr').addClass('checking-this-mail');
+      needCheckMails.foldername = $('.checking-this-mail input[name="foldername"]').val();
+      needCheckMails.login = $('.checking-this-mail input[name="login"]').val();
+      needCheckMails.password = $('.checking-this-mail input[name="password"]').val();
+
+
+      console.log(needCheckMails);
+
+      var jsonString = JSON.stringify(needCheckMails)
+      var SenderNeedCheckEmails = {};
+      SenderNeedCheckEmails.data = jsonString;
+
+      // process the form
+      $.ajax({
+        type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+        url         : 'check-mail.php', // the url where we want to POST
+        data: SenderNeedCheckEmails,
+        cache: false,
+        success: function(data){
+          console.log('ajax ok');
+        },
+        error: function (error) {
+          console.log('ajax false: ' + error);
+        }
+      })
+
+      .done(function( data ) {
+        console.log(data);
+        $('.checking-this-mail').removeClass('checking-this-mail');
+        // alert('Братишка, обнови страничку!');
+        // location.reload();
+      });
+    })
+
+
+  });
 
 });
 
