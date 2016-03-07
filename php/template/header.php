@@ -15,7 +15,7 @@
     <link href="favicon.ico" rel="shortcut icon">
 
     <!-- css + javascript -->
-    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="css/main.css" media="all">
 
     <!--[if lt IE 9]>
       <script type="text/javascript" src="js/html5shiv.js"></script>
