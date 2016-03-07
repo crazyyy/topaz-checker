@@ -6,7 +6,9 @@
       <table>
         <tr>
           <th>
-            ID
+            <a href="#" class="checkbox-toggler-1">
+              ID
+            </a>
           </th>
           <th>
             Название папки
@@ -34,6 +36,9 @@
           </th>
           <th>
             Статус
+          </th>
+          <th>
+            Переим
           </th>
         </tr>
 
@@ -117,16 +122,32 @@
                 $status_class = 'status-reject';
                 $status_title = 'Отказано';
               };
+
+              if ($status == '2') {
+                $status_class = 'status-renamed';
+                $status_title = 'Переименовано';
+              }
+
             ?>
             <td class="status <?php echo $status_class; ?>">
                 <i title="<?php echo $status_title ?>" class="fa fa-info-circle"></i>
+            </td>
+            <td>
+              <?php
+                if ( ($status_accept == '1' || $status_reject == '1') && $status != '2' ) {
+                  $checkbox = 'checked';
+                }
+              ?>
+              <input type="checkbox" name="rename-this" value="<?php echo $row['ID']; ?>" <?php echo $checkbox; ?>>
             </td>
           </tr>
         <? } ?>
 
       </table>
+      <button class="remove-row">Удалить выбранное</button>
       <button class="fill-the-form">Заполнить выбранные строчки</button>
       <button class="check-the-from">Проверить форму</button>
+      <button class="rename-row">Переименовать файло</button>
     </form><!-- /.main-form -->
 
 

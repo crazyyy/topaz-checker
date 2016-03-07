@@ -133,10 +133,126 @@ $(document).ready(function() {
     });
   })
 
-  // $('td').click(function(){
-  //   var $elem = $(this).find('input');
-  //   $elem.click();
-  // });
+
+  $('.main-form .remove-row').on('click', function(event){
+    event.preventDefault();
+
+    // get the form data
+    var needRemoveFiles = [];
+    $('.main-form input[name="remove-this"]:checked').each(function(index, el) {
+      var thisID = $(this).val();
+      console.log(thisID);
+      needRemoveFiles.push(thisID);
+    });
+
+    console.log(needRemoveFiles);
+
+    var jsonString = JSON.stringify(needRemoveFiles)
+    var SenderNeedRemoveString = {};
+    SenderNeedRemoveString.data = jsonString;
+
+    // process the form
+    $.ajax({
+      type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url         : 'remove.php', // the url where we want to POST
+      data: SenderNeedRemoveString,
+      cache: false,
+      success: function(data){
+        console.log('ajax ok');
+      },
+      error: function (error) {
+        console.log('ajax false: ' + error);
+      }
+    })
+
+    .done(function( data ) {
+      console.log(data);
+      location.reload();
+    });
+  })
+
+  $('.rename-row').on('click', function(event){
+    event.preventDefault();
+
+    // get the form data
+    var needRenameFiles = [];
+    $('.main-form input[name="rename-this"]:checked').each(function(index, el) {
+      var thisID = $(this).val();
+      console.log(thisID);
+      needRenameFiles.push(thisID);
+    });
+
+    console.log(needRenameFiles);
+
+    var jsonString = JSON.stringify(needRenameFiles)
+    var SenderNeedRenameString = {};
+    SenderNeedRenameString.data = jsonString;
+
+    // process the form
+    $.ajax({
+      type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url         : 'rename.php', // the url where we want to POST
+      data: SenderNeedRenameString,
+      cache: false,
+      success: function(data){
+        console.log('ajax ok');
+      },
+      error: function (error) {
+        console.log('ajax false: ' + error);
+      }
+    })
+
+    .done(function( data ) {
+      console.log(data);
+      location.reload();
+    });
+  })
+
+  $('.refresh-old-folders .remove-row').on('click', function(event){
+    event.preventDefault();
+
+    // get the form data
+    var needRemoveFiles = [];
+    $(this).parent('table').addClass('this-form-clean');
+    $('.refresh-old-folders input[name="remove-this"]:checked').each(function(index, el) {
+      var thisID = $(this).val();
+      console.log(thisID);
+      needRemoveFiles.push(thisID);
+    });
+
+    console.log(needRemoveFiles);
+
+    var jsonString = JSON.stringify(needRemoveFiles)
+    var SenderNeedRemoveString = {};
+    SenderNeedRemoveString.data = jsonString;
+
+    // process the form
+    $.ajax({
+      type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url         : 'remove-uploads.php', // the url where we want to POST
+      data: SenderNeedRemoveString,
+      cache: false,
+      success: function(data){
+        console.log('ajax ok');
+      },
+      error: function (error) {
+        console.log('ajax false: ' + error);
+      }
+    })
+
+    .done(function( data ) {
+      console.log(data);
+      location.reload();
+    });
+  })
+
+  $('.checkbox-toggler-1').click(function(event) {
+    event.preventDefault();
+    $('.main-form td:nth-child(1), .refresh-old-folders td:nth-child(1)').each(function(index, el) {
+      var $elem = $(this).find('input');
+      $elem.click();
+    })
+  });
 
   $('.checkbox-toggler-8').click(function(event) {
     event.preventDefault();
@@ -188,7 +304,7 @@ $(document).ready(function() {
           console.log('ajax ok');
         },
         error: function (error) {
-          alert('Ошибка, смотри логи')
+          console.error('Ошибка, смотри логи')
           console.log('ajax false: ' + error);
         }
       })

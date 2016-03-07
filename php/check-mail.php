@@ -25,7 +25,8 @@
     /* put the newest emails on top */
     rsort($emails);
 
-    $searchstringaccept = 'Your Federal Return Was Accepted';
+    $searchstringaccept = 'Federal Return Was Accepted';
+    $searchstringaccept2 = 'Federal Return Accepted';
     $searchstringreject = 'Federal Return Rejected - Action Needed';
 
     $allmails = [];
@@ -56,6 +57,10 @@
 
       // search string in subject
       if ( strpos($subjectstring, $searchstringaccept) !== false ) {
+        $emailobject->found = true;
+        $emailobject->accepted = true;
+        $sql = "UPDATE accounts SET date_checked = NOW(), status_accept = 1 WHERE folder_name = '".$foldername."';";
+      } else if ( strpos($subjectstring, $searchstringaccept2) !== false ) {
         $emailobject->found = true;
         $emailobject->accepted = true;
         $sql = "UPDATE accounts SET date_checked = NOW(), status_accept = 1 WHERE folder_name = '".$foldername."';";

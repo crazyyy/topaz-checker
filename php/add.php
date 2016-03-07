@@ -100,7 +100,9 @@
               <table>
                 <tr>
                   <th>
-                    <i class="fa fa-chevron-right"></i> ID</i>
+                    <a href="#" class="checkbox-toggler-1">
+                      <i class="fa fa-chevron-right"></i> ID</i>
+                    </a>
                   </th>
                   <th>
                     <i class="fa fa-calendar"></i> DATE</i>
@@ -132,6 +134,7 @@
                   <tr>
                     <td>
                       <?php echo $row['ID']; ?>
+                      <input type="checkbox" name="remove-this" value="<?php echo $row['ID']; ?>">
                     </td>
                     <td>
                       <?php echo $row['date_add']; ?>
@@ -163,6 +166,7 @@
                 <? } ?>
 
               </table>
+              <button class="remove-row">Удалить выбранное</button>
               <button>Проверить выбранные</button>
             </form>
           <?php } ?>

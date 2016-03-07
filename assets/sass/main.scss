@@ -239,8 +239,7 @@ input[type=checkbox] {
       &:nth-child(1) {
         width: 60px;
 
-          background-color: red;
-
+        background-color: red;
       }
       &:nth-child(8),
       &:nth-child(9),
@@ -275,6 +274,10 @@ input[type=checkbox] {
       color: #fff;
       background-color: $red;
     }
+    .status-renamed {
+      background-color: blue;
+      color: #fff;
+    }
     .checking-this-mail {
       td {
         background-color: lighten($orange, 15%);
@@ -282,7 +285,12 @@ input[type=checkbox] {
     }
   }
 }
-
+.remove-row {
+  background-color: red;
+}
+.rename-row {
+  background-color: green;
+}
 
 .result-checker {
   display: none;
