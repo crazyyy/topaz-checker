@@ -52,7 +52,10 @@
 
         while ($row = mysql_fetch_assoc($result)) { ?>
           <tr>
-            <td><?php echo $row['ID']; ?></td>
+            <td>
+              <?php echo $row['ID']; ?>
+              <input type="checkbox" name="remove-this" value="<?php echo $row['ID']; ?>">
+            </td>
             <td>
               <?php echo $row['folder_name']; ?>
               <input type="text" name="foldername" class="hidden" value="<?php echo $row['folder_name']; ?>">

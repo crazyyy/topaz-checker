@@ -198,6 +198,10 @@ article {
     display: none;
   }
 }
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
 .refresh-old-folders {
   table {
     table-layout: auto;
@@ -232,7 +236,12 @@ article {
     table-layout: auto;
     td,
     th {
-      &:nth-child(1),
+      &:nth-child(1) {
+        width: 60px;
+
+          background-color: red;
+
+      }
       &:nth-child(8),
       &:nth-child(9),
       &:nth-child(10) {

@@ -47,8 +47,9 @@ $(document).ready(function() {
 
     .done(function( data ) {
       console.log(data);
-      $('.refresh-old-folders table').append('<tr><td>1</td><td>2</td>3<td></td><td></td><td></td><td></td><td></td></tr>')
-      $('.refresh-old-folders').append('<h1 class="title title-red">Господин, для продолжения обновите эту страничку <i class="fa fa-refresh"></i></h1>')
+      $('.refresh-old-folders table').append('<tr><td>1</td><td>2</td>3<td></td><td></td><td></td><td></td><td></td></tr>');
+      $('.refresh-old-folders').append('<h1 class="title title-red">Господин, для продолжения обновите эту страничку <i class="fa fa-refresh"></i></h1>');
+      location.reload();
     });
     // stop the form from submitting the normal way and refreshing the page
     event.preventDefault();
@@ -87,7 +88,7 @@ $(document).ready(function() {
 
     .done(function( data ) {
       console.log(data);
-      alert('Братишка, обнови страничку!');
+      // alert('Братишка, обнови страничку!');
       location.reload();
     });
     // stop the form from submitting the normal way and refreshing the page
@@ -132,10 +133,10 @@ $(document).ready(function() {
     });
   })
 
-  $('td').click(function(){
-    var $elem = $(this).find('input');
-    $elem.click();
-  });
+  // $('td').click(function(){
+  //   var $elem = $(this).find('input');
+  //   $elem.click();
+  // });
 
   $('.checkbox-toggler-8').click(function(event) {
     event.preventDefault();
@@ -153,13 +154,14 @@ $(document).ready(function() {
     })
   });
 
+
   $('.check-the-from').on('click', function(event){
     event.preventDefault();
 
     $('.main-form input[name="check-this"]:checked').each(function(index, el) {
 
-console.log('index ' + index);
-console.log('el ' + el);
+      console.log('index ' + index);
+      console.log('el ' + el);
 
       // get the form data
       var needCheckMails = {foldername : '', login : '', password : ''};
@@ -186,6 +188,7 @@ console.log('el ' + el);
           console.log('ajax ok');
         },
         error: function (error) {
+          alert('Ошибка, смотри логи')
           console.log('ajax false: ' + error);
         }
       })
@@ -194,7 +197,7 @@ console.log('el ' + el);
         console.log(data);
 
         // alert('Братишка, обнови страничку!');
-        // location.reload();
+        location.reload();
       });
 
       $(this).closest('tr').removeClass('checking-this-mail');
