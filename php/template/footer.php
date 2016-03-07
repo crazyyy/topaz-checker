@@ -132,29 +132,43 @@ $(document).ready(function() {
     });
   })
 
+  $('td').click(function(){
+    var $elem = $(this).find('input');
+    $elem.click();
+  });
 
+  $('.checkbox-toggler-8').click(function(event) {
+    event.preventDefault();
+    $('.main-form td:nth-child(8)').each(function(index, el) {
+      var $elem = $(this).find('input');
+      $elem.click();
+    })
+  });
 
-
-
-
-
-
-
+  $('.checkbox-toggler-9').click(function(event) {
+    event.preventDefault();
+    $('.main-form td:nth-child(9)').each(function(index, el) {
+      var $elem = $(this).find('input');
+      $elem.click();
+    })
+  });
 
   $('.check-the-from').on('click', function(event){
     event.preventDefault();
 
-
     $('.main-form input[name="check-this"]:checked').each(function(index, el) {
+
+console.log('index ' + index);
+console.log('el ' + el);
 
       // get the form data
       var needCheckMails = {foldername : '', login : '', password : ''};
 
       $(this).closest('tr').addClass('checking-this-mail');
+
       needCheckMails.foldername = $('.checking-this-mail input[name="foldername"]').val();
       needCheckMails.login = $('.checking-this-mail input[name="login"]').val();
       needCheckMails.password = $('.checking-this-mail input[name="password"]').val();
-
 
       console.log(needCheckMails);
 
@@ -178,10 +192,13 @@ $(document).ready(function() {
 
       .done(function( data ) {
         console.log(data);
-        $('.checking-this-mail').removeClass('checking-this-mail');
+
         // alert('Братишка, обнови страничку!');
         // location.reload();
       });
+
+      $(this).closest('tr').removeClass('checking-this-mail');
+
     })
 
 

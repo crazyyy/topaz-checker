@@ -27,10 +27,10 @@
             Проверенно
           </th>
           <th>
-            Запю
+            <a class="checkbox-toggler-8" href="#">Запю</a>
           </th>
           <th>
-            Пров.
+            <a class="checkbox-toggler-9" href="#">Пров.</a>
           </th>
           <th>
             Статус
